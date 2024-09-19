@@ -12,7 +12,19 @@ with open(CSV_FILE_PATH, mode='r', encoding='utf-8') as csvfile:
 
 
 with open(JSON_FILE_PATH, mode='r', encoding='utf-8') as jsonfile:
-    users = json.load(jsonfile)
+    users_raw = json.load(jsonfile)
+
+
+users = []
+for user in users_raw:
+    filtered_user = {
+        "name": user["name"],
+        "gender": user["gender"],
+        "address": user["address"],
+        "age": user["age"],
+        "books": []
+    }
+    users.append(filtered_user)
 
 
 user_count = len(users)
