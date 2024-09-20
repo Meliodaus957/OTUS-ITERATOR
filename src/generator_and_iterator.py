@@ -15,15 +15,13 @@ with open(JSON_FILE_PATH, mode='r', encoding='utf-8') as jsonfile:
     users_raw = json.load(jsonfile)
 
 
-users = []
-for user in users_raw:
-    filtered_user = {
+users = [{
         "name": user["name"],
         "gender": user["gender"],
         "address": user["address"],
         "age": user["age"]
-    }
-    users.append(filtered_user)
+}for user in users_raw
+]
 
 
 user_count = len(users)
