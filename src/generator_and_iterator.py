@@ -21,8 +21,7 @@ for user in users_raw:
         "name": user["name"],
         "gender": user["gender"],
         "address": user["address"],
-        "age": user["age"],
-        "books": []
+        "age": user["age"]
     }
     users.append(filtered_user)
 
